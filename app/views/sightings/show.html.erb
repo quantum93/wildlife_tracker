@@ -1,0 +1,13 @@
+<h1>Sighting</h1>
+<h2>Animal: <%= @animal.name %></h2>
+<h2>Date: <%= @sighting.date %></h2>
+<h2>Latitude: <%= @sighting.lat %></h2>
+<h2>Longitude: <%= @sighting.long %></h2>
+<h2>Region: <%= Region.find(@sighting.region_id).place %></h2>
+
+<p><%= link_to "Edit sighting", edit_animal_sighting_path(@animal, @sighting) %></p>
+<p><%= link_to "Delete sighting", animal_sighting_path(@animal, @sighting),
+                        :data => {:confirm => "Are you sure?",
+                                       :method => "delete"} %></p>
+
+<p><%= link_to "Return to animal", animal_path(@animal) %></p>
